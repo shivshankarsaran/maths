@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <title>shiv</title>
+    
+    </head>
+    <body>
+        <h2>Enter your number here:</h2>
+            <input type="Number" id="num"/><br><br><br>
+            <button onclick="fac()">Print factorial</button>
+            <button onclick="fib()">Print Fibonacci series</button>
+            <button onclick="nat()">Print  natural numbers from 1</button>
+            <button onclick="mul()">Print multiplication table</button><br><br><br>
+
+        <h2>To find largest of 3 numbers:</h2>
+        Enter 1st number:&nbsp;&nbsp;&nbsp;
+            <input type="Number" id="num1"/><br>
+        Enter 2nd number:&nbsp;&nbsp;
+            <input type="Number" id="num2"/><br>
+        Enter 3rd number:&nbsp;&nbsp;&nbsp;
+            <input type="Number" id="num3"/><br>
+            <button onclick="lar()">Print  largest number</button><br>
+        
+        <h2>To find sum and average of list of numbers</h2>
+    
+        <button onclick="sa()">Print sum and average</button><br><br><br>
+
+
+
+    <script>
+        <!--------------------------factorial-------------->
+        function fac()
+        {
+		
+            var n=document.getElementById("num").value;
+            var f=1;
+            for (var i=1;i<=n;i++)
+            {
+                f=f*i;
+            }
+	document.write('Factorial:')
+            document.write(f)
+	
+		
+            
+        }
+
+        <!-------------------------fibonacci-------------->
+        function fib()
+        {
+            var n=document.getElementById("num").value;
+            var a=0;
+        var b=1;
+        var c;
+        document.write('Fibonacci series :')
+        document.write(a)
+        document.write(',')
+        document.write(b)
+        document.write(',')
+    for (var i=3;i<=n;i++)
+{
+    c=a+b;
+    document.write(c);
+    document.write(',');
+    a=b;
+    b=c;
+}
+        }
+
+        <!--------------------------natural-------------->
+
+        function nat()
+        {
+            var n=document.getElementById("num").value;
+	document.write('Natural number from 1  :')
+            for (var i=1;i<=n;i++)
+
+            {
+                document.write(i)
+	    document.write('&nbsp;')
+            }
+            
+        }
+
+        <!--------------------------multiplication-------------->
+        function mul()
+        {
+            var n=document.getElementById('num').value;
+            var c=1;
+            for (var i=1;i<=n;i++)
+            {   
+                c=n*i
+                document.write(n)
+                document.write('*')
+                document.write(i)
+                document.write('=')
+                document.write( c)
+                document.write('<br>')
+            }
+        }
+        <!--------------------------largest-------------->
+        function lar()
+        {
+            var n1=document.getElementById('num1').value;
+            var n2=document.getElementById('num2').value;
+            var n3=document.getElementById('num3').value;
+            if(n1>n2 && n1>n3)
+            {
+                document.write(n1)
+                document.write('&nbsp;is largest of three number')
+            }
+
+            if(n2>n1 && n2>n3)
+            {
+                document.write(n2)
+                document.write('&nbsp;is largest of three number')
+            }
+
+            if(n3>n2 && n3>n1)
+            {
+                document.write(n3)
+                document.write('&nbsp;is largest of three number')
+            }
+        }
+
+        function sa()
+        {
+            var n1,n2,n3,avgs,sums;
+            n1=prompt('enter 1st number');
+            n2=prompt('enter 2nd number');
+            n3=prompt('enter 3rd number');
+            n4=Number(n1);
+            n5=Number(n2);
+            n6=Number(n3);
+            sums=(n4+n5+n6);
+            avgs=(sums/3);
+            
+            document.write('sum is  '+sums+'<br>')  
+            document.write('average is '+avgs)
+        }
+
+    </script>
+    </body>
+</html>
